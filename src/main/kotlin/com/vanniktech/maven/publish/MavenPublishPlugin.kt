@@ -27,12 +27,12 @@ open class MavenPublishPlugin : Plugin<Project> {
 
     p.gradlePublishing.repositories.maven { repo ->
       repo.name = "mavenCentral"
-      repo.setUrl("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+      repo.setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
       repo.credentials(PasswordCredentials::class.java)
 
       p.afterEvaluate {
         if (it.version.toString().endsWith("SNAPSHOT")) {
-          repo.setUrl("https://oss.sonatype.org/content/repositories/snapshots/")
+          repo.setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
         }
       }
     }

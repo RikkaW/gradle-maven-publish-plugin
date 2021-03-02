@@ -38,7 +38,7 @@ data class NexusOptions(
   var repositoryPassword: String?
 ) {
   companion object {
-    private const val OSSRH_API_BASE_URL = "https://oss.sonatype.org/service/local/"
+    private const val OSSRH_API_BASE_URL = "https://s01.oss.sonatype.org/service/local/"
 
     fun fromProject(project: Project): NexusOptions {
       return NexusOptions(
